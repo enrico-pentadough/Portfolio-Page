@@ -138,16 +138,20 @@ h1 {
 .hero-content {
     position: relative;
     z-index: 1;
-    color: var(--twilight-indigo); /* darker text since background is now much lighter */
+    color: var(--twilight-indigo);
     padding: 2rem;
+    text-shadow: 0 8px 20px rgba(255, 255, 255, 0.8);
 }
 
+
 .hero-content .highlight {
-    color: var(--dark-wine); /* small wine accent, as planned */
+    color: var(--dark-wine);
+    text-shadow: 0 8px 20px rgba(255, 255, 255, 0.8);
 }
 
 .hero-content .lead {
     color: var(--dark-khaki);
+    text-shadow: 0 8px 20px rgba(255, 255, 255, 0.8);
 }
 
 /* Buttons use the calmer palette now; wine kept only for a small hover accent */
@@ -156,6 +160,10 @@ h1 {
     border-color: var(--twilight-indigo);
     color: #fff;
     transition: background-color 0.2s ease, border-color 0.2s ease;
+    -webkit-transition: background-color 0.2s ease, border-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease, border-color 0.2s ease;
+    -ms-transition: background-color 0.2s ease, border-color 0.2s ease;
+    -o-transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -177,9 +185,10 @@ footer {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
-    padding: 1rem;
-    background-color: var(--muted-teal-2) ;
-    color: var(--dark-khaki);
+    padding: 0.4rem 1rem;   /* was 1rem — shrinks the height */
+    font-size: 0.85rem;     /* smaller text also reduces visual bulk */
+    background-color: var(--dark-khaki);
+    color: var(--muted-teal-2);
     opacity: 0.25;
     transition: opacity 0.3s ease;
 }
