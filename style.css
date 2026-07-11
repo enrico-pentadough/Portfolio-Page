@@ -174,7 +174,7 @@ h1 {
 /* goals section css */
 
 #goals {
-    padding: 4rem 1.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
 }
 
@@ -247,4 +247,13 @@ footer:hover {
     #home h1 {
         font-size: 2rem;
     }
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--dark-wine);
+    width: 80%;
+    margin: 3rem auto;
+    opacity: 0.6;
 }
