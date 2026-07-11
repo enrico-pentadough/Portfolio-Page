@@ -154,7 +154,7 @@ h1 {
     text-shadow: 0 8px 20px rgba(255, 255, 255, 0.8);
 }
 
-/* Buttons use the calmer palette now; wine kept only for a small hover accent */
+/* Button in homepage css */
 .btn-primary {
     background-color: var(--twilight-indigo);
     border-color: var(--twilight-indigo);
@@ -170,6 +170,35 @@ h1 {
     background-color: var(--dark-wine);
     border-color: var(--dark-wine);
 }
+
+/* goals section css */
+
+#goals {
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.goals-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.goal-card {
+    background-color: var(--twilight-indigo);
+    color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 260px;
+    transition: transform 0.2s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-4px);
+}
+
 
 #fun-message {
     margin-top: 1rem;
