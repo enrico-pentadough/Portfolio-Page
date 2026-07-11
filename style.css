@@ -1,0 +1,152 @@
+/* color palette shi */
+
+:root {
+    --dark-wine: #7b1113;
+    --dark-khaki: #313715;
+    --muted-teal: #8fa998;
+    --twilight-indigo: #2c365e;
+    --muted-teal-2: #9cbfa7;
+}
+
+/* ===== Base ===== */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--dark-khaki);
+    background-color: #fdfdfd;
+    margin: 0;
+    padding: 0;
+    padding-top: 64px;     /* clears the fixed navbar */
+    padding-bottom: 60px;  /* clears the fixed footer */
+}
+
+h1 {
+    color: var(--twilight-indigo);
+}
+
+/* Wine reserved as a small accent only — used sparingly below */
+.highlight {
+    color: var(--dark-wine);
+}
+
+/* ===== Navbar: fixed, full width ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--twilight-indigo);
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+}
+
+.logo a {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+ /* css for the navbar */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--muted-teal-2);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* ===== home section ===== */
+#home {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+}
+
+#home .lead {
+    color: var(--muted-teal);
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons use the calmer palette now; wine kept only for a small hover accent */
+.btn-primary {
+    background-color: var(--twilight-indigo);
+    border-color: var(--twilight-indigo);
+    color: #fff;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-wine);
+    border-color: var(--dark-wine);
+}
+
+#fun-message {
+    margin-top: 1rem;
+    color: var(--dark-khaki);
+    font-style: italic;
+}
+
+/* ===== Footer: fixed, faded until hovered ===== */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--dark-khaki);
+    color: var(--muted-teal-2);
+    opacity: 0.25;
+    transition: opacity 0.3s ease;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    body {
+        padding-top: 110px; /* nav is taller when stacked on mobile */
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+}
