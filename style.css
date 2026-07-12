@@ -207,6 +207,66 @@ h1 {
     -o-transform: translateY(-6px);
 }
 
+/* ===== Experience section ===== */
+
+#experience {
+    padding: 4rem 1.5rem;
+    background-color: #f4f6f5;
+    text-align: center;
+}
+
+.scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 2rem auto 0;
+}
+
+.experience-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0.5rem;
+    scrollbar-width: none; /* Firefox */
+}
+
+.experience-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.experience-card {
+    flex: 0 0 260px;
+    scroll-snap-align: start;
+    background-color: #fff;
+    border: 1px solid var(--muted-teal);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.exp-meta {
+    color: var(--twilight-indigo);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.scroll-btn {
+    background-color: var(--twilight-indigo);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.scroll-btn.left { margin-right: 0.75rem; }
+.scroll-btn.right { margin-left: 0.75rem; }
+
 
 #fun-message {
     margin-top: 1rem;
