@@ -126,7 +126,8 @@ h1 {
     opacity: 0.65;
     transform: scale(1.1);
     z-index: 0;
-    /*fadesedgesintothepagebackground*/-webkit-mask-image: radial-gradient(ellipse at center, #000 50%, transparent 80%);
+    /*fades the edges into the page background*/
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 50%, transparent 80%);
     mask-image: radial-gradient(ellipse at center, #000 50%, transparent 80%);
     -webkit-filter: blur(0.5px);
     -webkit-transform: scale(1.1);
@@ -284,7 +285,7 @@ footer {
     text-align: center;
     padding: 0.4rem 1rem;   /* was 1rem — shrinks the height */
     font-size: 0.85rem;     /* smaller text also reduces visual bulk */
-    background-color: var(--dark-khaki);
+    background-color: var(--dark-wine);
     color: var(--muted-teal-2);
     opacity: 0.25;
     transition: opacity 0.3s ease;
