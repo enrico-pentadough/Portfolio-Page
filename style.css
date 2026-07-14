@@ -56,6 +56,42 @@ h1 {
     z-index: 1000;
 }
 
+.nav-toggle {
+    display: none; /* hidden on desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-toggle {
+        display: block; /* shows the hamburger icon only on mobile */
+    }
+
+    .nav-links {
+        display: none; /* collapsed by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .nav-links.is-open {
+        display: flex; /* toggled open by JS */
+    }
+
+    body {
+        padding-top: 70px; /* nav no longer taller by default now that it collapses */
+    }
+}
+
 .logo a {
     font-weight: bold;
     font-size: 1.25rem;
@@ -310,24 +346,8 @@ footer:hover {
     opacity: 1;
 }
 
-/* ===== Responsive ===== */
+/* ===== Responsive: extra rules merged into the single media query above ===== */
 @media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        gap: 0.75rem;
-        padding: 0.75rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
-
-    body {
-        padding-top: 110px; /* nav is taller when stacked on mobile */
-    }
-
     #home h1 {
         font-size: 2rem;
     }

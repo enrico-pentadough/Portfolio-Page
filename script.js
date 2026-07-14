@@ -62,14 +62,22 @@ document.addEventListener('DOMContentLoaded', function () {
         cards.forEach((card) => observer.observe(card));
         cards[middleIndex].classList.add('is-active');
 
-        // Scroll the middle card into center position on page load
+        // Scroll the middle card into center position on page load, without affecting page scroll
         window.addEventListener('load', () => {
-            cards[middleIndex].scrollIntoView({
-                behavior: 'auto',
-                inline: 'center',
-                block: 'nearest',
-            });
+            const card = cards[middleIndex];
+            const targetScrollLeft =
+                card.offsetLeft - (track.clientWidth / 2) + (card.clientWidth / 2);
+            track.scrollLeft = targetScrollLeft;
         });
     }
 
+    // ===== Mobile nav dropdown toggle =====
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('is-open');
+        });
+    }
 });
