@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const cards = Array.from(document.querySelectorAll('.experience-card'));
 
     if (track && leftBtn && rightBtn && cards.length) {
-        let currentIndex = 0;
+        const middleIndex = Math.floor(cards.length / 2); // e.g. 3 cards -> index 1
+        let currentIndex = middleIndex;
 
         function goToCard(index) {
             if (index < 0 || index >= cards.length) return;
@@ -59,7 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
         );
 
         cards.forEach((card) => observer.observe(card));
-        cards[0].classList.add('is-active');
+        cards[middleIndex].classList.add('is-active');
+
+        // Scroll the middle card into center position on page load
+        window.addEventListener('load', () => {
+            cards[middleIndex].scrollIntoView({
+                behavior: 'auto',
+                inline: 'center',
+                block: 'nearest',
+            });
+        });
     }
 
 });
