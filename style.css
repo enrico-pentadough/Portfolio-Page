@@ -12,13 +12,12 @@
 html, body, * {
   /* Firefox */
   scrollbar-width: none;
-  
   /* Internet Explorer and Legacy Edge */
-  -ms-overflow-style: none;  
+  -ms-overflow-style: none;
 }
 
 /* Chrome, Safari, Opera, and Chromium Edge */
-html::-webkit-scrollbar, 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar,
 *::-webkit-scrollbar {
   display: none;
@@ -110,7 +109,7 @@ h1 {
 }
 
 .nav-links a {
-    color: var(--muted-teal-2);
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
@@ -149,6 +148,8 @@ h1 {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    border: 2px solid var(--twilight-indigo);
+    border-radius: 12px;
 }
 
 .hero::before {
@@ -251,7 +252,10 @@ h1 {
     background-color: #f4f6f5;
     text-align: center;
     overflow: hidden;
+    border: 2px solid var(--twilight-indigo);
+    border-radius: 12px;
 }
+
 
 .scroll-wrapper {
     position: relative;
@@ -337,7 +341,7 @@ footer {
     padding: 0.4rem 1rem;   /* was 1rem — shrinks the height */
     font-size: 0.85rem;     /* smaller text also reduces visual bulk */
     background-color: var(--dark-wine);
-    color: var(--muted-teal-2);
+    color: #fff;
     opacity: 0.25;
     transition: opacity 0.3s ease;
 }
