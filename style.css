@@ -214,6 +214,7 @@ h1 {
     padding: 4rem 1.5rem;
     background-color: #f4f6f5;
     text-align: center;
+    overflow: hidden;
 }
 
 .scroll-wrapper {
@@ -226,25 +227,40 @@ h1 {
 
 .experience-track {
     display: flex;
+    align-items: stretch; /* forces equal height across cards */
     gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 0.5rem;
-    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth; /* native smooth animation for scrollIntoView/scrollTo */
+    padding: 2rem calc(50% - 190px); /* centers first/last card: half of card width (380px / 2 = 190px) */
+    scrollbar-width: none;
 }
 
 .experience-track::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
 }
 
 .experience-card {
-    flex: 0 0 260px;
-    scroll-snap-align: start;
+    flex: 0 0 380px;
+    /*fixedwidthnow—everycardisidenticalsize*/width: 380px;
+    min-height: 320px;
+    /*fixed-ishheightsocardsmatchregardlessofcontentlength*/scroll-snap-align: center;
     background-color: #fff;
     border: 1px solid var(--muted-teal);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: left;
+    filter: blur(5px);
+    /*increasedfrom3px*/opacity: 0.35;
+    /*increasedtransparency,downfrom0.5*/transform: scale(0.85);
+    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    -webkit-filter: blur(5px);
+}
+
+.experience-card.is-active {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
 }
 
 .exp-meta {
@@ -267,7 +283,6 @@ h1 {
 
 .scroll-btn.left { margin-right: 0.75rem; }
 .scroll-btn.right { margin-left: 0.75rem; }
-
 
 #fun-message {
     margin-top: 1rem;
