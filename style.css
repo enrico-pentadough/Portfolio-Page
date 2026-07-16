@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap');
+
 /* color palette shi */
 
 :root {
@@ -16,6 +18,7 @@ html, body, * {
   -ms-overflow-style: none;
 }
 
+
 /* Chrome, Safari, Opera, and Chromium Edge */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
@@ -25,20 +28,22 @@ body::-webkit-scrollbar,
 
 
 /* ===== Base ===== */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: var(--dark-khaki);
-    background-color: #fdfdfd;
-    margin: 0;
-    padding: 0;
-    padding-top: 64px;     /* clears the fixed navbar */
-    padding-bottom: 60px;  /* clears the fixed footer */
-}
 
 h1 {
     color: var(--twilight-indigo);
 }
 
+body {
+    font-family: 'Mozilla Text', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--dark-khaki);
+    background-color: #f7f6f3;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(44, 54, 94, 0.08) 0px, rgba(44, 54, 94, 0.08) 1.5px, transparent 1.5px, transparent 12px);
+    margin: 0;
+    padding: 0;
+    padding-top: 64px;
+    padding-bottom: 60px;
+}
 
 /* ===== Navbar: fixed, full width ===== */
 .navbar {
@@ -64,17 +69,18 @@ h1 {
     cursor: pointer;
 }
 
+/* css for mobile */
 @media (max-width: 600px) {
     .navbar {
         flex-wrap: wrap;
     }
 
     .nav-toggle {
-        display: block; /* shows the hamburger icon only on mobile */
+        display: block;
     }
 
     .nav-links {
-        display: none; /* collapsed by default on mobile */
+        display: none;
         flex-direction: column;
         width: 100%;
         text-align: center;
@@ -83,11 +89,11 @@ h1 {
     }
 
     .nav-links.is-open {
-        display: flex; /* toggled open by JS */
+        display: flex;
     }
 
     body {
-        padding-top: 70px; /* nav no longer taller by default now that it collapses */
+        padding-top: 70px;
     }
 }
 
@@ -141,6 +147,8 @@ h1 {
 /* hero section of homepage */
 
 .hero {
+    border: 2px solid var(--twilight-indigo);
+    background-color: white;
     position: relative;
     min-height: 90vh;
     display: flex;
@@ -148,7 +156,6 @@ h1 {
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    border: 2px solid var(--twilight-indigo);
     border-radius: 12px;
 }
 
@@ -156,7 +163,6 @@ h1 {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("images/intro.png");
     background-size: cover;
     background-position: center;
     filter: blur(0.5px);
@@ -248,7 +254,7 @@ h1 {
 /* ===== Experience section ===== */
 
 #experience {
-    padding: 4rem 1.5rem;
+    padding: 4rem .5rem;
     background-color: #f4f6f5;
     text-align: center;
     overflow: hidden;
@@ -261,17 +267,18 @@ h1 {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* pushes buttons to the outer edges */
     max-width: 900px;
     margin: 2rem auto 0;
 }
 
 .experience-track {
     display: flex;
-    align-items: stretch; /* forces equal height across cards */
+    align-items: stretch;
     gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth; /* native smooth animation for scrollIntoView/scrollTo */
+    scroll-behavior: smooth;
     padding: 2rem calc(50% - 190px); /* centers first/last card: half of card width (380px / 2 = 190px) */
     scrollbar-width: none;
 }
@@ -282,17 +289,17 @@ h1 {
 
 .experience-card {
     flex: 0 0 380px;
-    /*fixedwidthnow—everycardisidenticalsize*/width: 380px;
+    /width: 380px;
     min-height: 320px;
-    /*fixed-ishheightsocardsmatchregardlessofcontentlength*/scroll-snap-align: center;
+    scroll-snap-align: center;
     background-color: #fff;
     border: 1px solid var(--muted-teal);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: left;
     filter: blur(5px);
-    /*increasedfrom3px*/opacity: 0.35;
-    /*increasedtransparency,downfrom0.5*/transform: scale(0.85);
+    opacity: 0.35;
+    transform: scale(0.85);
     transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
     -webkit-filter: blur(5px);
 }
@@ -321,8 +328,13 @@ h1 {
     z-index: 2;
 }
 
-.scroll-btn.left { margin-right: 0.75rem; }
-.scroll-btn.right { margin-left: 0.75rem; }
+.scroll-btn.left {
+    margin-right: 20px;
+}
+
+.scroll-btn.right {
+    margin-left: 20px;
+}
 
 #fun-message {
     margin-top: 1rem;
@@ -338,8 +350,8 @@ footer {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
-    padding: 0.4rem 1rem;   /* was 1rem — shrinks the height */
-    font-size: 0.85rem;     /* smaller text also reduces visual bulk */
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
     background-color: var(--dark-wine);
     color: #fff;
     opacity: 0.25;
