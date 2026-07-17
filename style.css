@@ -45,7 +45,7 @@ body {
     padding-bottom: 60px;
 }
 
-/* ===== Navbar: fixed, full width ===== */
+/* Navbar: fixed, full width  */
 .navbar {
     position: fixed;
     top: 0;
@@ -104,8 +104,6 @@ body {
     text-decoration: none;
 }
 
- /* css for the navbar */
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -129,7 +127,7 @@ body {
     color: #fff;
 }
 
-/* ===== home section ===== */
+/* home section */
 #home {
     text-align: center;
     padding: 4rem 1rem;
