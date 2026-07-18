@@ -71,6 +71,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ===== Timeline hover description swap =====
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineDescText = document.getElementById('timeline-description-text');
+
+    if (timelineItems.length && timelineDescText) {
+        timelineItems.forEach((item) => {
+            item.addEventListener('mouseenter', () => {
+                timelineDescText.classList.add('fade-out');
+                setTimeout(() => {
+                    timelineDescText.textContent = item.dataset.description;
+                    timelineDescText.classList.remove('fade-out');
+                }, 200);
+            });
+        });
+    }
+
     // ===== Mobile nav dropdown toggle =====
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
