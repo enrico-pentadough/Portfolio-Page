@@ -11,179 +11,181 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">My Portfolio</a>
+        </div>
 
-    <main class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">My Portfolio</a>
-            </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            &#9776;
+        </button>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-                &#9776;
-            </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!-- Education Maintains Card System FORMAT-->
-        <section id="education" style="padding: 3rem 1.5rem; text-align: center;">
-            <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>EDUCATION</b></h2>
-            <div class="goals-grid">
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>Philippine Science High School - EVC</b></h3>
-                    <p><i>High School · 2020–2026 Director's Lister</i></p>
-                    <p>Specializing in the sciences with a focus on engineering and computational research.</p>
-                </div>
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>University of the Philippines Diliman</b></h3>
-                    <p><i>Bachelor's · 2026-2030 (Expected) </i></p>
-                    <p>Currently pursuing a degree in BS Computer Engineering, a field that aligns with all my engineering interests and goals</p>
-                </div>
-            </div>
-        </section>
-
-        <hr style="margin: 3rem auto 1rem;">
-
-        <!-- Certificates & Awards apply a more timeline esque design-->
-        <section id="awards" style="padding: 3rem 1.5rem; text-align: center;">
-            <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>CERTIFICATES & AWARDS</b></h2>
-
-            <div class="timeline-wrapper">
-                <div class="timeline-horizontal">
-                    <div class="timeline-item" data-description="Recognized for creative and original approaches to scientific problem-solving at an international science fair.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>Creative Insight Award</b></h3>
-                            <p><i>KVIS-ISF · 2025</i></p>
+        <div class="page-scroll">
+            <main class="container">
+                <!-- Education Maintains Card System FORMAT-->
+                <section id="education" style="padding: 3rem 1.5rem; text-align: center;">
+                    <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>EDUCATION</b></h2>
+                    <div class="goals-grid">
+                        <div class="goal-card">
+                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>Philippine Science High School - EVC</b></h3>
+                            <p><i>High School · 2020–2026 Director's Lister</i></p>
+                            <p>Specializing in the sciences with a focus on engineering and computational research.</p>
                         </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
+                        <div class="goal-card">
+                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>University of the Philippines Diliman</b></h3>
+                            <p><i>Bachelor's · 2026-2030 (Expected) </i></p>
+                            <p>Currently pursuing a degree in BS Computer Engineering, a field that aligns with all my engineering interests and goals</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr style="margin: 3rem auto 1rem;">
+
+                <!-- Certificates & Awards apply a more timeline esque design-->
+                <section id="awards" style="padding: 3rem 1.5rem; text-align: center;">
+                    <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>CERTIFICATES & AWARDS</b></h2>
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-horizontal">
+                            <div class="timeline-arrow left"></div>
+                            <div class="timeline-item" data-description="Recognized for creative and original approaches to scientific problem-solving at an international science fair.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>Creative Insight Award</b></h3>
+                                    <p><i>KVIS-ISF · 2025</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Placed 2nd for an oral presentation on health research findings at a regional research symposium.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>2nd Place, Oral Presentation</b></h3>
+                                    <p><i>RHRS · 2025</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Certification for competency in utilizing JavaScript to develop functional, interactive web pages.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>JavaScript Certification</b></h3>
+                                    <p><i>HackerRank · Aug 2025</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Certificate evaluating intern-level competency in Python and core software development skills.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>Intern-level Software Engineering Certification</b></h3>
+                                    <p><i>HackerRank · Aug 2025</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Certification for competency in utilizing Python for programming and problem-solving.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>Python Certification</b></h3>
+                                    <p><i>HackerRank · Aug 2025</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Awarded for identifying dengue-inhibiting compounds in Moringa oleifera through chem-informatics research methods.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>Best Research Project – Chemistry</b></h3>
+                                    <p><i>SMT Fair · 2026</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Foundational certification covering core data concepts including data types, analysis, modeling, and cleaning.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>IBM Data Fundamentals Certification</b></h3>
+                                    <p><i>IBM · Jun 2026</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Certification covering Java programming fundamentals and object-oriented programming concepts.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>Java Certification</b></h3>
+                                    <p><i>HackerRank · Jun 2026</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+
+                            <div class="timeline-item" data-description="Certification for competency in using SQL to manage, communicate, and retrieve data.">
+                                <div class="timeline-content">
+                                    <h3 style="font-family: 'Mozilla Text';"><b>SQL Certification</b></h3>
+                                    <p><i>HackerRank · Jun 2026</i></p>
+                                </div>
+                                <div class="timeline-connector"></div>
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <!-- To add a new award: copy one .timeline-item block above and edit its title/date/data-description. Alternating position is automatic. -->
+                            <div class="timeline-arrow right"></div>
+                        </div>
                     </div>
 
-                    <div class="timeline-item" data-description="Placed 2nd for an oral presentation on health research findings at a regional research symposium.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>2nd Place, Oral Presentation</b></h3>
-                            <p><i>RHRS · 2025</i></p>
-                        </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
+                    <div class="timeline-description" id="timeline-description">
+                        <p id="timeline-description-text">Hover over an award to see more details.</p>
                     </div>
+                </section>
 
-                    <div class="timeline-item" data-description="Certification for competency in utilizing JavaScript to develop functional, interactive web pages.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>JavaScript Certification</b></h3>
-                            <p><i>HackerRank · Aug 2025</i></p>
+                <hr style="margin: 3rem auto 1rem;">
+
+                <!-- Organizations note TODO: convert to a Icon/Logo reveal on Hover, add timestamps-->
+                <section id="organizations" style="padding: 3rem 1.5rem; text-align: center;">
+                    <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>ORGANIZATIONS</b></h2>
+                    <div class="goals-grid">
+                        <div class="goal-card">
+                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>LIGID</b></h3>
+                            <p><i>President</i></p>
                         </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <div class="timeline-item" data-description="Certificate evaluating intern-level competency in Python and core software development skills.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>Intern-level Software Engineering Certification</b></h3>
-                            <p><i>HackerRank · Aug 2025</i></p>
+                        <div class="goal-card">
+                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>CAFE PISAY</b></h3>
+                            <p><i>Internal Vice President</i></p>
+                            <p>Organized and Managed the internal operation of the organization, spearheading initiatives for first time outreach programs to new communities</p>
                         </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <div class="timeline-item" data-description="Certification for competency in utilizing Python for programming and problem-solving.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>Python Certification</b></h3>
-                            <p><i>HackerRank · Aug 2025</i></p>
+                        <div class="goal-card">
+                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>ECHO</b></h3>
+                            <p><i>Secretary</i></p>
                         </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <div class="timeline-item" data-description="Awarded for identifying dengue-inhibiting compounds in Moringa oleifera through chem-informatics research methods.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>Best Research Project – Chemistry</b></h3>
-                            <p><i>SMT Fair · 2026</i></p>
+                        <div class="goal-card">
+                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>ReelTalk ALA</b></h3>
+                            <p><i>Vice President</i></p>
                         </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <div class="timeline-item" data-description="Foundational certification covering core data concepts including data types, analysis, modeling, and cleaning.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>IBM Data Fundamentals Certification</b></h3>
-                            <p><i>IBM · Jun 2026</i></p>
+                        <div class="goal-card">
+                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>Athletic Council</b></h3>
+                            <p><i>Auditor</i></p>
                         </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
                     </div>
+                </section>
 
-                    <div class="timeline-item" data-description="Certification covering Java programming fundamentals and object-oriented programming concepts.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>Java Certification</b></h3>
-                            <p><i>HackerRank · Jun 2026</i></p>
-                        </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
+                <hr style="margin: 3rem auto 1rem;">
+
+                <!--Hobbies-->
+                <section id="hobbies" style="padding: 3rem 1.5rem 4rem; text-align: center;">
+                    <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>HOBBIES</b></h2>
+                    <div class="goals-grid">
                     </div>
-
-                    <div class="timeline-item" data-description="Certification for competency in using SQL to manage, communicate, and retrieve data.">
-                        <div class="timeline-content">
-                            <h3 style="font-family: 'Mozilla Text';"><b>SQL Certification</b></h3>
-                            <p><i>HackerRank · Jun 2026</i></p>
-                        </div>
-                        <div class="timeline-connector"></div>
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <!-- To add a new award: copy one .timeline-item block above and edit its title/date/data-description. Alternating position is automatic. -->
-                </div>
-            </div>
-
-            <div class="timeline-description" id="timeline-description">
-                <p id="timeline-description-text">Hover over an award to see more details.</p>
-            </div>
-        </section>
-
-        <hr style="margin: 3rem auto 1rem;">
-
-        <!-- Organizations note TODO: convert to a Icon/Logo reveal on Hover, add timestamps-->
-        <section id="organizations" style="padding: 3rem 1.5rem; text-align: center;">
-            <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>ORGANIZATIONS</b></h2>
-            <div class="goals-grid">
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>LIGID</b></h3>
-                    <p><i>President</i></p>
-                </div>
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>CAFE PISAY</b></h3>
-                    <p><i>Internal Vice President</i></p>
-                    <p>Organized and Managed the internal operation of the organization, spearheading initiatives for first time outreach programs to new communities</p>
-                </div>
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>ECHO</b></h3>
-                    <p><i>Secretary</i></p>
-                </div>
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>ReelTalk ALA</b></h3>
-                    <p><i>Vice President</i></p>
-                </div>
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>Athletic Council</b></h3>
-                    <p><i>Auditor</i></p>
-                </div>
-            </div>
-        </section>
-
-        <hr style="margin: 3rem auto 1rem;">
-
-        <!--Hobbies-->
-        <section id="hobbies" style="padding: 3rem 1.5rem 4rem; text-align: center;">
-            <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>HOBBIES</b></h2>
-            <div class="goals-grid">
-            </div>
-        </section>
-
-    </main>
+                </section>
+            </main>
+        </div>
 
     <footer>
         <p>&copy; 2026 Enrico Wilhelm E. Pentado. All rights reserved.</p>

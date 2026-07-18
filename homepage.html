@@ -13,97 +13,98 @@
 </head>
 <body>
 
-    <main class="container">
-        <!--TODO: Fix Navbar for mobile devices, have the tabs be in a drop down list rather than always showing -->
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">My Portfolio</a>
-            </div>
+    <!--TODO: Fix Navbar for mobile devices, have the tabs be in a drop down list rather than always showing -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">My Portfolio</a>
+        </div>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-                &#9776;
-            </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            &#9776;
+        </button>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!--TODO: make section smaller -->
-        <section id="home" class="hero" style="margin: 1rem auto 1rem;">
-            <div class="hero-content">
-                <h1><b>Hi, I am <span class="highlight" style="color: #7b1113">Enrico</span></b></h1>
-                <p class="lead" style="font-family: 'Mozilla Text'; color: #313715"><b>Aspiring hybrid computer engineer interested in ML, AI, Software, and Robotics</b></p>
-                <button style= "font-family: 'Mozilla Text'; "id="fun-button" class="btn btn-primary">Click me</button>
-                <p id="fun-message"></p>
-            </div>
-        </section>
-
-        <hr style="margin: 3rem auto 1rem;">
-
-        <section id="goals">
-            <h2 style="font-family: 'Mozilla Text';"><b>MY GOALS</b></h2>
-            <div class="goals-grid">
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>GROWTH</b></h3>
-                    <p><i>Always building my skills not just in Programming and Engineering but even for</i></p>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="page-scroll">
+        <main class="container">
+            <!--TODO: make section smaller -->
+            <section id="home" class="hero" style="margin: 1rem auto 1rem;">
+                <div class="hero-content">
+                    <h1><b>Hi, I am <span class="highlight" style="color: #7b1113">Enrico</span></b></h1>
+                    <p class="lead" style="font-family: 'Mozilla Text'; color: #313715"><b>Aspiring hybrid computer engineer interested in ML, AI, Software, and Robotics</b></p>
+                    <button style= "font-family: 'Mozilla Text'; "id="fun-button" class="btn btn-primary">Click me</button>
+                    <p id="fun-message"></p>
                 </div>
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>APPLICATION</b></h3>
-                    <p><i>Seeking hands-on work in industry and research, to apply the skills I learn within my fields of interest</i></p>
-                </div>
-                <div class="goal-card">
-                    <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>IMPACT</b></h3>
-                    <p><i>Focused on real results, from identifying drug components, acting upon data, to improving user experience</i></p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <hr style="margin: 3rem auto 1rem;">
+            <hr style="margin: 3rem auto 1rem;">
 
-        <!--TODO: Fix div sizing for mobile devices, have it so that it only displays one cell at a time -->
-        <section id="experience" style="font-family: 'Times New Roman'; margin: 3rem auto 1rem;">
-            <h2 style = "font-family: 'Mozilla Text';"><b>E X P E R I E N C E</b></h2>
-            <div class="scroll-wrapper">
-                    <button class="scroll-btn left" aria-label="Scroll left">&#10094;</button>
-
-                    <div class="experience-track">
-                        <div class="experience-card">
-                            <h3>Student Researcher & Presenter</h3>
-                            <p class="exp-meta" style="font-family: 'Mozilla Text';display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="images/homepage/pisay.jpg" alt="PSHS-EVC logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--muted-teal);">
-                                Philippine Science High School – Eastern Visayas Campus · 2024–2026
-                            </p>
-                            <p style="text-align: justify; text-justify: inter-word; hyphens: auto;">Researched chem-informatics and bio-informatics applications, identifying dengue-inhibiting compounds in Moringa oleifera. Presented at four major forums, earning awards.</p>
-                            <img src="images/homepage/research.jpg" alt="Research presentation photo" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 260px; border-radius: 8px; margin-top: 0.75rem; display: block;">
-                        </div>
-                        <div class="experience-card">
-                            <h3>AI/ML Research Intern</h3>
-                            <p class="exp-meta" style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="images/homepage/SIP.png" alt="UP Diliman logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--muted-teal);">
-                                CheIntel Learning Laboratory, UP Diliman · June–July 2025
-                            </p>
-                            <p style="text-align: justify; text-justify: inter-word; hyphens: auto;">Voluntary summer internship at the CheIntel Research Laboratory, curating and analyzing chemical concept datasets for AI model training under the mentorship of engineers and researchers.</p>
-                            <img src="images/homepage/Sip-Photo.jpg" alt="Lab photo" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 260px; border-radius: 8px; margin-top: 0.75rem; display: block;">
-                        </div>
-                        <div class="experience-card">
-                            <h3>Student Leader</h3>
-                            <p class="exp-meta" style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="images/homepage/pisay.jpg" alt="PSHS-EVC logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--muted-teal);">
-                                PSHS-EVC Organizations · 2023–2026
-                            </p>
-                            <p style="text-align: justify; text-justify: inter-word; hyphens: auto;;">Led multiple student organizations managing and coordinating teams during tenure as an executive officer in each organization</p>
-                            <img src="images/homepage/leadership.jpg" alt="Leadership event photo" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 260px; border-radius: 8px; margin-top: 0.75rem; display: block;">
-                        </div>
+            <section id="goals">
+                <h2 style="font-family: 'Mozilla Text';"><b>MY GOALS</b></h2>
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>GROWTH</b></h3>
+                        <p><i>Always building my skills not just in Programming and Engineering but even for</i></p>
                     </div>
+                    <div class="goal-card">
+                        <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>APPLICATION</b></h3>
+                        <p><i>Seeking hands-on work in industry and research, to apply the skills I learn within my fields of interest</i></p>
+                    </div>
+                    <div class="goal-card">
+                        <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>IMPACT</b></h3>
+                        <p><i>Focused on real results, from identifying drug components, acting upon data, to improving user experience</i></p>
+                    </div>
+                </div>
+            </section>
 
-                    <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
-            </div>
-        </section>
-    </main>
+            <hr style="margin: 3rem auto 1rem;">
+
+            <!--TODO: Fix div sizing for mobile devices, have it so that it only displays one cell at a time -->
+            <section id="experience" style="font-family: 'Times New Roman'; margin: 3rem auto 1rem;">
+                <h2 style = "font-family: 'Mozilla Text';"><b>E X P E R I E N C E</b></h2>
+                <div class="scroll-wrapper">
+                        <button class="scroll-btn left" aria-label="Scroll left">&#10094;</button>
+
+                        <div class="experience-track">
+                            <div class="experience-card">
+                                <h3>Student Researcher & Presenter</h3>
+                                <p class="exp-meta" style="font-family: 'Mozilla Text';display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="images/homepage/pisay.jpg" alt="PSHS-EVC logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--muted-teal);">
+                                    Philippine Science High School – Eastern Visayas Campus · 2024–2026
+                                </p>
+                                <p style="text-align: justify; text-justify: inter-word; hyphens: auto;">Researched chem-informatics and bio-informatics applications, identifying dengue-inhibiting compounds in Moringa oleifera. Presented at four major forums, earning awards.</p>
+                                <img src="images/homepage/research.jpg" alt="Research presentation photo" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 260px; border-radius: 8px; margin-top: 0.75rem; display: block;">
+                            </div>
+                            <div class="experience-card">
+                                <h3>AI/ML Research Intern</h3>
+                                <p class="exp-meta" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="images/homepage/SIP.png" alt="UP Diliman logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--muted-teal);">
+                                    CheIntel Learning Laboratory, UP Diliman · June–July 2025
+                                </p>
+                                <p style="text-align: justify; text-justify: inter-word; hyphens: auto;">Voluntary summer internship at the CheIntel Research Laboratory, curating and analyzing chemical concept datasets for AI model training under the mentorship of engineers and researchers.</p>
+                                <img src="images/homepage/Sip-Photo.jpg" alt="Lab photo" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 260px; border-radius: 8px; margin-top: 0.75rem; display: block;">
+                            </div>
+                            <div class="experience-card">
+                                <h3>Student Leader</h3>
+                                <p class="exp-meta" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="images/homepage/pisay.jpg" alt="PSHS-EVC logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--muted-teal);">
+                                    PSHS-EVC Organizations · 2023–2026
+                                </p>
+                                <p style="text-align: justify; text-justify: inter-word; hyphens: auto;;">Led multiple student organizations managing and coordinating teams during tenure as an executive officer in each organization</p>
+                                <img src="images/homepage/leadership.jpg" alt="Leadership event photo" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 260px; border-radius: 8px; margin-top: 0.75rem; display: block;">
+                            </div>
+                        </div>
+
+                        <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2026 Enrico Wilhelm E. Pentado. All rights reserved.</p>
