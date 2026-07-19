@@ -8,6 +8,169 @@
     --muted-teal: #8fa998;
     --twilight-indigo: #2c365e;
     --muted-teal-2: #9cbfa7;
+    --deep-navy: #1b2340;
+}
+
+/* ===== Alternating dark sections: full-bleed dark blue bg, white text, black accents ===== */
+.dark-section {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    background-color: var(--deep-navy);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    color: #ffffff;
+    padding: 5rem 1.5rem;
+    overflow: hidden;
+}
+
+/* Fade zones that replicate the exact body texture (color + diagonal lines), then dissolve to transparent */
+.dark-section::before,
+.dark-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 160px;
+    z-index: 2;
+    pointer-events: none;
+    background-color: #f7f6f3;
+    background-image:
+        repeating-linear-gradient(45deg, rgba(44, 54, 94, 0.08) 0px, rgba(44, 54, 94, 0.08) 1.5px, transparent 1.5px, transparent 12px);
+}
+
+.dark-section::before {
+    top: 0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+}
+
+.dark-section::after {
+    bottom: 0;
+    -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 100%);
+    mask-image: linear-gradient(to top, #000 0%, transparent 100%);
+}
+
+.dark-section h2 {
+    color: #ffffff;
+}
+
+.dark-section h2.section-title,
+.dark-section h2[style] {
+    border-color: #ffffff !important; /* black was invisible against the dark navy background */
+}
+
+.dark-section .goal-card {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.dark-section .goal-card h3 {
+    color: #000000;
+}
+
+.dark-section .goal-card p,
+.dark-section .goal-card p i {
+    color: #000000; /* fixes text that was inheriting white-on-white from the section-level rule below */
+}
+
+.dark-section p {
+    color: #ffffff;
+}
+
+.dark-section hr {
+    background-color: #ffffff;
+}
+
+/* Fade the full-bleed dark background into the page background — now handled directly in .dark-section above */
+
+.dark-section .timeline-wrapper {
+    max-width: 750px;
+    margin: 2.5rem auto 0;
+    border: 2px solid #ffffff;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.15);
+
+    /* Firefox */
+    scrollbar-color: #ffffff var(--deep-navy);
+}
+
+.dark-section .timeline-wrapper::-webkit-scrollbar-track {
+    background: var(--deep-navy); /* matches the section bg so the thumb reads as a floating bar */
+    border-radius: 10px;
+}
+
+.dark-section .timeline-wrapper::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid var(--deep-navy);
+}
+
+.dark-section .timeline-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: var(--muted-teal-2);
+}
+
+.dark-section .timeline-wrapper::-webkit-scrollbar-button {
+    display: block; /* re-enabled — shows left/right arrows to signal scrollability */
+    background-color: var(--deep-navy);
+}
+.dark-section .timeline-horizontal::before {
+    background-color: #ffffff; /* black was unreadable against the dark navy background */
+}
+
+.dark-section .timeline-dot {
+    background-color: #ffffff;
+    border-color: var(--deep-navy);
+}
+
+.dark-section .timeline-item:hover .timeline-dot {
+    background-color: var(--dark-wine);
+    border-color: #ffffff;
+}
+
+.dark-section .timeline-connector {
+    background-color: #ffffff;
+}
+
+.dark-section .timeline-item:hover .timeline-connector {
+    background-color: var(--dark-wine);
+}
+
+.dark-section .timeline-content {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.dark-section .timeline-content p {
+    color: #000000;
+}
+
+.dark-section .timeline-item:hover .timeline-content {
+    border-color: var(--dark-wine);
+}
+
+.dark-section .timeline-arrow.left {
+    border-right-color: #ffffff;
+}
+
+.dark-section .timeline-arrow.right {
+    border-left-color: #ffffff;
+}
+
+.dark-section .timeline-description {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.dark-section .timeline-description p {
+    color: #000000; /* fixes text inheriting white-on-white from the section-level ".dark-section p" rule */
 }
 
 /* Themed vertical scrollbar — scoped to .page-scroll (the area below the fixed navbar), not the whole html */
@@ -563,7 +726,7 @@ footer {
     font-size: 0.85rem;
     background-color: var(--dark-wine);
     color: #fff;
-    opacity: 0.25;
+    opacity: 0; /* fully invisible until hovered */
     transition: opacity 0.3s ease;
 }
 
