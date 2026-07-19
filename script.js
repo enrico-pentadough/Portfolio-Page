@@ -119,13 +119,94 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Mobile nav dropdown toggle =====
+    // Mobile nav dropdown toggle
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
 
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
             navLinks.classList.toggle('is-open');
+        });
+    }
+
+    // Organizations: logo carousel driving photo + text on the right
+    const orgTrack = document.getElementById('org-logo-track');
+    const orgItems = Array.from(document.querySelectorAll('.org-logo-item'));
+    const orgLeftBtn = document.getElementById('org-logo-left');
+    const orgRightBtn = document.getElementById('org-logo-right');
+    const orgPhoto = document.getElementById('org-photo');
+    const orgName = document.getElementById('org-name');
+    const orgRole = document.getElementById('org-role');
+    const orgDesc = document.getElementById('org-description');
+
+    if (orgTrack && orgItems.length) {
+        let currentOrgIndex = 0;
+
+        function applyOrgData(item) {
+            orgPhoto.style.opacity = 0;
+            orgName.style.opacity = 0;
+            orgRole.style.opacity = 0;
+            orgDesc.style.opacity = 0;
+
+            setTimeout(() => {
+                orgPhoto.src = item.dataset.photo;
+                orgName.textContent = item.dataset.name;
+                orgRole.textContent = item.dataset.role;
+                orgDesc.textContent = item.dataset.description;
+                orgPhoto.style.opacity = 1;
+                orgName.style.opacity = 1;
+                orgRole.style.opacity = 1;
+                orgDesc.style.opacity = 1;
+            }, 150);
+        }
+
+        function updateActiveOrg() {
+            const trackRect = orgTrack.getBoundingClientRect();
+            const center = trackRect.left + trackRect.width / 2;
+
+            let closestIndex = 0;
+            let closestDist = Infinity;
+
+            orgItems.forEach((item, i) => {
+                const r = item.getBoundingClientRect();
+                const c = r.left + r.width / 2;
+                const dist = Math.abs(c - center);
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closestIndex = i;
+                }
+            });
+
+            if (closestIndex !== currentOrgIndex) {
+                currentOrgIndex = closestIndex;
+                applyOrgData(orgItems[closestIndex]);
+            }
+
+            orgItems.forEach((item, i) => item.classList.toggle('is-active', i === closestIndex));
+        }
+
+        let orgScrollTimeout;
+        orgTrack.addEventListener('scroll', () => {
+            clearTimeout(orgScrollTimeout);
+            orgScrollTimeout = setTimeout(updateActiveOrg, 50);
+        });
+
+        orgItems.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                item.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            });
+        });
+
+        orgLeftBtn.addEventListener('click', () => {
+            if (currentOrgIndex > 0) {
+                orgItems[currentOrgIndex - 1].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        });
+
+        orgRightBtn.addEventListener('click', () => {
+            if (currentOrgIndex < orgItems.length - 1) {
+                orgItems[currentOrgIndex + 1].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
         });
     }
 });
