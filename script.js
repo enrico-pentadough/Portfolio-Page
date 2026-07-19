@@ -71,18 +71,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Timeline hover description swap =====
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const timelineDescText = document.getElementById('timeline-description-text');
+    // ===== Timeline: hover, click, and keyboard navigation =====
+    const timelineDots = Array.from(document.querySelectorAll('.timeline-dot'));
+    const panel = document.getElementById('timeline-panel');
+    const panelTitle = document.getElementById('timeline-panel-title');
+    const panelDate = document.getElementById('timeline-panel-date');
+    const panelDesc = document.getElementById('timeline-panel-description');
 
-    if (timelineItems.length && timelineDescText) {
-        timelineItems.forEach((item) => {
-            item.addEventListener('mouseenter', () => {
-                timelineDescText.classList.add('fade-out');
-                setTimeout(() => {
-                    timelineDescText.textContent = item.dataset.description;
-                    timelineDescText.classList.remove('fade-out');
-                }, 200);
+    if (timelineDots.length && panel) {
+        let activeIndex = null;
+
+        function showDot(index) {
+            timelineDots.forEach((d) => d.classList.remove('is-active'));
+            const dot = timelineDots[index];
+            dot.classList.add('is-active');
+            activeIndex = index;
+
+            panel.classList.add('fade-out');
+            setTimeout(() => {
+                panelTitle.textContent = dot.dataset.title;
+                panelDate.textContent = dot.dataset.date;
+                panelDesc.textContent = dot.dataset.description;
+                panel.classList.remove('fade-out');
+            }, 150);
+        }
+
+        timelineDots.forEach((dot, index) => {
+            dot.addEventListener('mouseenter', () => showDot(index));
+            dot.addEventListener('click', () => {
+                showDot(index);
+                dot.focus();
+            });
+            dot.addEventListener('focus', () => showDot(index));
+        });
+
+        // Keyboard arrow navigation between dots
+        timelineDots.forEach((dot, index) => {
+            dot.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && index < timelineDots.length - 1) {
+                    e.preventDefault();
+                    timelineDots[index + 1].focus();
+                } else if (e.key === 'ArrowLeft' && index > 0) {
+                    e.preventDefault();
+                    timelineDots[index - 1].focus();
+                }
             });
         });
     }
