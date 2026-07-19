@@ -50,11 +50,6 @@
                 <hr style="margin: 3rem auto 1rem;">
 
                 <!-- Certificates & Awards apply a more timeline esque design-->
-                <!-- TODO: Fix the fades, they are too strong and too short, more subtle slower fade-->
-                <!-- TODO: Scrollbar looks misplaced, change color theme to suit better the new background maybe have the bar itself be white and its background match the background so it looks like theres just a floating white bar with arrows left and right to show its a scrollbar-->
-                <!--TODO: Make the timeline wrapper a smaller scale window within the section that way it suits better, maybe have a white border for all of it-->
-                <!-- TODO: Dark sections feel untextured need new texture to kinda match the textured white background not necessarily diagonal lines too-->
-                <!-- TODO: Fix description text current wrong font color-->
                 <section id="awards" class="dark-section" style="padding: 3rem 1.5rem; text-align: center;">
                     <br>
                     <br>
@@ -66,35 +61,37 @@
 
                     <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>CERTIFICATES & AWARDS</b></h2>
 
+                    <!-- TODO: Make the description box a fixed size, add some images if possible similarly to the expereience carousel but here instead the pictures of the certificates-->
                     <div class="timeline-wrapper">
                         <div class="timeline-track">
                             <div class="timeline-arrow left"></div>
 
                             <!-- Certificates -->
-                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="JavaScript Proficiency Certification" data-date="HackerRank · Aug 2025" data-description="Certification for competency in utilizing JavaScript to develop functional, interactive web pages." aria-label="JavaScript Proficiency Certification"></button>
+                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="JavaScript Proficiency Certification" data-date="HackerRank · Aug 2025" data-description="Validated proficiency in core JavaScript, covering DOM manipulation, event handling, and client-side logic for building interactive, functional web interfaces." aria-label="JavaScript Proficiency Certification"></button>
 
-                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="Intern-level Software Engineering Certification" data-date="HackerRank · Aug 2025" data-description="Certificate evaluating intern-level competency in Python and core software development skills." aria-label="Intern-level Software Engineering Certification"></button>
+                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="Intern-level Software Engineering Certification" data-date="HackerRank · Aug 2025" data-description="Assessed intern-level competency in Python and core software engineering practices, including code structure, debugging, and problem-solving under time constraints." aria-label="Intern-level Software Engineering Certification"></button>
 
-                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="Python Proficiency Certification" data-date="HackerRank · Aug 2025" data-description="Certification for competency in utilizing Python for programming and problem-solving." aria-label="Python Proficiency Certification"></button>
+                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="Python Proficiency Certification" data-date="HackerRank · Aug 2025" data-description="Validated proficiency in Python fundamentals and data structures, directly applied in building a semi-automated cheminformatics data pipeline using pandas and pathlib." aria-label="Python Proficiency Certification"></button>
 
-                            <button class="timeline-dot" data-type="award" data-label="Award" data-title="2nd Place, Oral Presentation" data-date="Regional Health Research Symposium · Dec 2025" data-description="Placed 2nd for an oral presentation on health research findings at a regional research symposium." aria-label="2nd Place, Oral Presentation"></button>
+                            <button class="timeline-dot" data-type="award" data-label="Award" data-title="2nd Place, Oral Presentation" data-date="Regional Health Research Symposium · Dec 2025" data-description="Delivered an oral presentation on 'In Silico Investigation of Moringa Oleifera Flavonoids as Potential Inhibitors of NS3 and NS5 of the DENV Virus.' Presented methodology and findings from a semi-automated pipeline built with pandas, matplotlib, and pathlib that screened 100+ flavonoid candidates. Placed 2nd for clarity and rigor of methodology." aria-label="2nd Place, Oral Presentation"></button>
 
-                            <button class="timeline-dot" data-type="award" data-label="Award" data-title="Creative Insight Award" data-date="Kamnoetvidya Science Academy - International Science Fair · Feb 2026" data-description="Recognized for creative and original approaches to scientific problem-solving at an international science fair." aria-label="Creative Insight Award"></button>
+                            <button class="timeline-dot" data-type="award" data-label="Award" data-title="Creative Insight Award" data-date="Kamnoetvidya Science Academy - International Science Fair · Feb 2026" data-description="Recognized for narrowing 100+ flavonoid candidates down to 2 potential inhibitors of the DENV NS3 and NS5 proteins through an in silico screening pipeline. Awarded for surfacing underexplored opportunities in cheminformatics to an international panel of academics and professionals." aria-label="Creative Insight Award"></button>
 
                             <!-- Award -->
-                            <button class="timeline-dot" data-type="award" data-label="Award" data-title="Best Research Project – Chemistry" data-date="SMT Fair · 2026" data-description="Awarded for identifying dengue-inhibiting compounds in Moringa oleifera through chem-informatics research methods." aria-label="Best Research Project – Chemistry"></button>
+                            <button class="timeline-dot" data-type="award" data-label="Award" data-title="Best Research Project – Chemistry" data-date="PSHS-EVC Science Math and Technology Fair · 2026" data-description="Awarded for research identifying dengue-inhibiting compounds in Moringa oleifera. Built a semi-automated screening pipeline using pandas for data analysis, matplotlib for modeling and visualization, and pathlib for automated file handling — accelerating the project timeline by running lengthy tasks without manual input." aria-label="Best Research Project – Chemistry"></button>
 
                             <!-- Important certificate -->
-                            <button class="timeline-dot" data-type="important-certificate" data-label="Important Certificate" data-title="IBM Data Fundamentals Certification" data-date="IBM · Jun 2026" data-description="Foundational certification covering core data concepts including data types, analysis, modeling, and cleaning." aria-label="IBM Data Fundamentals Certification"></button>
+                            <button class="timeline-dot" data-type="important-certificate" data-label="Important Certificate" data-title="IBM Data Fundamentals Certification" data-date="IBM · Jun 2026" data-description="Covers foundational data concepts including data types, analysis, modeling, and data cleaning, with hands-on exposure to IBM Watson tools for applied data analysis." aria-label="IBM Data Fundamentals Certification"></button>
 
                             <!-- Certificates -->
-                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="Java Certification" data-date="HackerRank · Jun 2026" data-description="Certification covering Java programming fundamentals and object-oriented programming concepts." aria-label="Java Certification"></button>
+                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="Java Certification" data-date="HackerRank · Jun 2026" data-description="Validated competency in Java programming fundamentals and object-oriented programming principles, including class design, inheritance, and encapsulation." aria-label="Java Certification"></button>
 
-                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="SQL Certification" data-date="HackerRank · Jun 2026" data-description="Certification for competency in using SQL to manage, communicate, and retrieve data." aria-label="SQL Certification"></button>
+                            <button class="timeline-dot" data-type="certificate" data-label="Certificate" data-title="SQL Certification" data-date="HackerRank · Jun 2026" data-description="Validated proficiency in SQL for managing, querying, and retrieving data across relational databases, covering joins, aggregation, and data manipulation." aria-label="SQL Certification"></button>
 
                             <div class="timeline-arrow right"></div>
                         </div>
                     </div>
+
 
                     <div class="timeline-panel" id="timeline-panel">
                         <h3 id="timeline-panel-title">Explore my awards & certificates</h3>
