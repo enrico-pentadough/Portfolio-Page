@@ -170,10 +170,8 @@
 }
 
 .dark-section .timeline-description p {
-    color: #000000; /* fixes text inheriting white-on-white from the section-level ".dark-section p" rule */
-}
+    color: #000000;
 
-/* Themed vertical scrollbar — scoped to .page-scroll (the area below the fixed navbar), not the whole html */
 
 html, body {
     height: 100%;
@@ -224,7 +222,7 @@ html, body {
 }
 
 
-/* ===== Base ===== */
+/* Base */
 
 h1 {
     color: var(--twilight-indigo);
