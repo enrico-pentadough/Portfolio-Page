@@ -456,7 +456,6 @@ body {
     max-width: 900px;
     margin: 2rem auto 0;
 }
-
 .experience-track {
     display: flex;
     align-items: stretch;
@@ -466,6 +465,10 @@ body {
     scroll-behavior: smooth;
     padding: 2rem calc(50% - 190px); /* centers first/last card: half of card width (380px / 2 = 190px) */
     scrollbar-width: none;
+
+    /* True edge fade: fades the actual track content at the edges, not an overlay box on top of it */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
 .experience-track::-webkit-scrollbar {
@@ -738,7 +741,7 @@ body {
     height: 36px;
     cursor: pointer;
     flex-shrink: 0;
-    z-index: 2;
+    z-index: 4;
 }
 
 .scroll-btn.left {
