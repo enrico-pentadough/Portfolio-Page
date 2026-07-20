@@ -119,6 +119,64 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ===== Projects gallery modal =====
+    const projectTiles = document.querySelectorAll('.project-tile');
+    const projectModal = document.getElementById('project-modal');
+    const modalClose = document.getElementById('project-modal-close');
+    const modalImg = document.getElementById('project-modal-img');
+    const modalTitle = document.getElementById('project-modal-title');
+    const modalDesc = document.getElementById('project-modal-description');
+    const modalGithub = document.getElementById('project-modal-github');
+    const modalDocs = document.getElementById('project-modal-docs');
+
+    if (projectTiles.length && projectModal) {
+        projectTiles.forEach((tile) => {
+            tile.addEventListener('click', () => {
+                const img = tile.querySelector('img');
+                modalImg.src = img.src; // reuses the same thumbnail image
+                modalImg.alt = img.alt;
+                modalTitle.textContent = tile.dataset.title;
+                modalDesc.textContent = tile.dataset.description;
+
+                // GitHub link: only show if a URL was provided
+                if (tile.dataset.github) {
+                    modalGithub.href = tile.dataset.github;
+                    modalGithub.style.display = 'inline-block';
+                } else {
+                    modalGithub.style.display = 'none';
+                }
+
+                // Docs link: only show if a URL was provided
+                if (tile.dataset.docs) {
+                    modalDocs.href = tile.dataset.docs;
+                    modalDocs.style.display = 'inline-block';
+                } else {
+                    modalDocs.style.display = 'none';
+                }
+
+                projectModal.classList.add('is-open');
+            });
+        });
+
+        function closeModal() {
+            projectModal.classList.remove('is-open');
+        }
+
+        modalClose.addEventListener('click', closeModal);
+
+        // Click outside the content box to close
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) closeModal();
+        });
+
+        // Escape key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && projectModal.classList.contains('is-open')) {
+                closeModal();
+            }
+        });
+    }
+
     // ===== Mobile nav dropdown toggle =====
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
