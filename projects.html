@@ -33,12 +33,66 @@
 
 
         <!-- TODO: Make projects section make it look like a grid gallery
-        that when you click on a project, it pulls it up on screen image to the side text 
-        to the other, also it has the name on the image before you click 
+        that when you click on a project, it pulls it up on screen image to the side text
+        to the other, also it has the name on the image before you click
         it the image used is the same image when you view the project details-->
-        <section id="projects">
-            
+        <section id="projects" style="padding: 4rem 1.5rem; text-align: center;">
+            <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>PROJECTS</b></h2>
+            <p style="max-width: 600px; margin: 1rem auto 0; color: var(--dark-khaki);">A collection of things I've built — click any project to see the full details.</p>
+
+            <div class="projects-grid">
+                <div class="project-tile"
+                    data-title="Project One"
+                    data-description="Insert A description of what this project does, the problem it solves, and how you built it."
+                    data-github="https://github.com/enrico-pentadough/project-one"
+                    data-docs="">
+                    <img src="images/projects/project-one.jpg" alt="Project One">
+                    <div class="project-label"><h3>Project One</h3></div>
+                </div>
+
+                <div class="project-tile"
+                    data-title="Project Two"
+                    data-description="Insert A description of what this project does, the problem it solves, and how you built it."
+                    data-github="https://github.com/enrico-pentadough/project-two"
+                    data-docs="">
+                    <img src="images/projects/project-two.jpg" alt="Project Two">
+                    <div class="project-label"><h3>Project Two</h3></div>
+                </div>
+
+                <div class="project-tile"
+                    data-title="Project Three"
+                    data-description="Insert a description of what this project does, the problem it solves, and how you built it."
+                    data-github="https://github.com/enrico-pentadough/project-three"
+                    data-docs="">
+                    <img src="images/projects/project-three.jpg" alt="Project Three">
+                    <div class="project-label"><h3>Project Three</h3></div>
+                </div>
+
+                <!-- Add more projects by copying one .project-tile block above -->
+            </div>
         </section>
+
+        <!-- Full-screen project detail overlay -->
+        <div class="project-modal" id="project-modal">
+            <div class="project-modal-content">
+                <button class="project-modal-close" id="project-modal-close" aria-label="Close project details">&times;</button>
+
+                <div class="project-modal-image">
+                    <img id="project-modal-img" src="" alt="">
+                </div>
+
+                <div class="project-modal-text">
+                    <h2 id="project-modal-title"></h2>
+                    <p id="project-modal-description"></p>
+
+                    <div class="project-modal-links">
+                        <a id="project-modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+                        <a id="project-modal-docs" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
