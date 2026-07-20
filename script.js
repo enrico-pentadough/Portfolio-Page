@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Timeline: hover, click, and keyboard navigation =====
+    // timeline: hover, click, and keyboard navigation
     const timelineDots = Array.from(document.querySelectorAll('.timeline-dot'));
     const panel = document.getElementById('timeline-panel');
     const panelTitle = document.getElementById('timeline-panel-title');
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dot.addEventListener('focus', () => showDot(index));
         });
 
-        // Keyboard arrow navigation between dots
+        // keyboard arrow navigation between dots
         timelineDots.forEach((dot, index) => {
             dot.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowRight' && index < timelineDots.length - 1) {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Projects gallery modal =====
+    // Projects gallery modal 
     const projectTiles = document.querySelectorAll('.project-tile');
     const projectModal = document.getElementById('project-modal');
     const modalClose = document.getElementById('project-modal-close');
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 modalTitle.textContent = tile.dataset.title;
                 modalDesc.textContent = tile.dataset.description;
 
-                // GitHub link: only show if a URL was provided
+                // gitHub link: only show if a URL was provided
                 if (tile.dataset.github) {
                     modalGithub.href = tile.dataset.github;
                     modalGithub.style.display = 'inline-block';
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     modalGithub.style.display = 'none';
                 }
 
-                // Docs link: only show if a URL was provided
+                // docs link: only show if a URL was provided
                 if (tile.dataset.docs) {
                     modalDocs.href = tile.dataset.docs;
                     modalDocs.style.display = 'inline-block';
@@ -164,12 +164,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         modalClose.addEventListener('click', closeModal);
 
-        // Click outside the content box to close
+        // click outside the content box to close
         projectModal.addEventListener('click', (e) => {
             if (e.target === projectModal) closeModal();
         });
 
-        // Escape key to close
+        // escape key to close
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && projectModal.classList.contains('is-open')) {
                 closeModal();
