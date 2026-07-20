@@ -111,28 +111,69 @@
 
                 <!-- Organizations note TODO: convert to a Icon/Logo reveal on Hover, add timestamps-->
                 <section id="organizations" style="padding: 3rem 1.5rem; text-align: center;">
-                    <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>ORGANIZATIONS</b></h2>
-                    <div class="goals-grid">
-                        <div class="goal-card">
-                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>LIGID</b></h3>
-                            <p><i>President</i></p>
+                    <h2 class="section-title"><b>ORGANIZATIONS</b></h2>
+
+                    <div class="org-layout">
+                        <!-- Left column: photo + logo carousel -->
+                        <div class="org-left">
+                            <div class="org-photo-wrapper">
+                                <img id="org-photo" src="images/about/org-ligid.jpg" alt="Work with LIGID">
+                            </div>
+
+                            <div class="org-logo-scroll-wrapper">
+                                <button class="scroll-btn left" id="org-logo-left" aria-label="Previous organization">&#10094;</button>
+
+                                <div class="org-logo-track" id="org-logo-track">
+                                    <button class="org-logo-item is-active"
+                                        data-name="LIGID"
+                                        data-role="President"
+                                        data-photo="images/about/org-ligid.jpg"
+                                        data-description="Led LIGID as President, overseeing the organization's direction and initiatives.">
+                                        <img src="images/about/logo-ligid.png" alt="LIGID logo">
+                                    </button>
+
+                                    <button class="org-logo-item"
+                                        data-name="CAFE PISAY"
+                                        data-role="Internal Vice President"
+                                        data-photo="images/about/org-cafe.jpg"
+                                        data-description="Organized and managed the organization's internal operations, spearheading first-time outreach programs to new communities.">
+                                        <img src="images/about/logo-cafe.png" alt="CAFE PISAY logo">
+                                    </button>
+
+                                    <button class="org-logo-item"
+                                        data-name="ECHO"
+                                        data-role="Secretary"
+                                        data-photo="images/about/org-echo.jpg"
+                                        data-description="Handled documentation and internal communications for ECHO as Secretary.">
+                                        <img src="images/about/logo-echo.png" alt="ECHO logo">
+                                    </button>
+
+                                    <button class="org-logo-item"
+                                        data-name="ReelTalk ALA"
+                                        data-role="Vice President"
+                                        data-photo="images/about/org-reeltalk.jpg"
+                                        data-description="Supported ReelTalk ALA's leadership and programming as Vice President.">
+                                        <img src="images/about/logo-reeltalk.png" alt="ReelTalk ALA logo">
+                                    </button>
+
+                                    <button class="org-logo-item"
+                                        data-name="Athletic Council"
+                                        data-role="Auditor"
+                                        data-photo="images/about/org-athletic.jpg"
+                                        data-description="Oversaw financial accountability and record-keeping for the Athletic Council.">
+                                        <img src="images/about/logo-athletic.png" alt="Athletic Council logo">
+                                    </button>
+                                </div>
+
+                                <button class="scroll-btn right" id="org-logo-right" aria-label="Next organization">&#10095;</button>
+                            </div>
                         </div>
-                        <div class="goal-card">
-                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>CAFE PISAY</b></h3>
-                            <p><i>Internal Vice President</i></p>
-                            <p>Organized and Managed the internal operation of the organization, spearheading initiatives for first time outreach programs to new communities</p>
-                        </div>
-                        <div class="goal-card">
-                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>ECHO</b></h3>
-                            <p><i>Secretary</i></p>
-                        </div>
-                        <div class="goal-card">
-                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>ReelTalk ALA</b></h3>
-                            <p><i>Vice President</i></p>
-                        </div>
-                        <div class="goal-card">
-                            <h3 style="font-family: 'Mozilla Text'; padding-bottom: 3.2px;"><b>Athletic Council</b></h3>
-                            <p><i>Auditor</i></p>
+
+                        <!-- Right column: name, role, description — updates with the active logo -->
+                        <div class="org-right">
+                            <h3 id="org-name">LIGID</h3>
+                            <p class="role" id="org-role">President</p>
+                            <p id="org-description">Led LIGID as President, overseeing the organization's direction and initiatives.</p>
                         </div>
                     </div>
                 </section>
@@ -141,9 +182,55 @@
 
                 <!--Hobbies-->
                 <section id="hobbies" class="dark-section" style="padding: 3rem 1.5rem 4rem; text-align: center;">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                     <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>HOBBIES</b></h2>
-                    <div class="goals-grid">
+
+                    <div class="hobby-grid">
+                        <div class="hobby-tile">
+                            <img src="images/about/hobby-1.jpg" alt="Hobby One">
+                            <div class="hobby-overlay">
+                                <h3>Chess</h3>
+                                <p>A sentence about what this hobby is and why you enjoy it.</p>
+                            </div>
+                        </div>
+
+                        <div class="hobby-tile">
+                            <img src="images/about/hobby-2.jpg" alt="Hobby Two">
+                            <div class="hobby-overlay">
+                                <h3>Game Development and Play testing</h3>
+                                <p>A sentence about what this hobby is and why you enjoy it.</p>
+                            </div>
+                        </div>
+
+                        <div class="hobby-tile">
+                            <img src="images/about/hobby-3.jpg" alt="Hobby Three">
+                            <div class="hobby-overlay">
+                                <h3>Photography</h3>
+                                <p>A sentence about what this hobby is and why you enjoy it.</p>
+                            </div>
+                        </div>
+
+                        <div class="hobby-tile">
+                            <img src="images/about/hobby-4.jpg" alt="Hobby Four">
+                            <div class="hobby-overlay">
+                                <h3>Classic Literature</h3>
+                                <p>A sentence about what this hobby is and why you enjoy it.</p>
+                            </div>
+                        </div>
+
+                        <!-- Add more tiles by copying one .hobby-tile block above -->
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                 </section>
             </main>
         </div>
