@@ -173,8 +173,6 @@ html, body {
     height: calc(100vh - 64px); /* fills all remaining space below the navbar */
     overflow-y: auto;
     overflow-x: hidden;
-    padding-bottom: 3.5rem; /* single source of footer clearance, sized to the footer's actual rendered height plus a small gap */
-
     /* Firefox */
     scrollbar-width: thin;
     scrollbar-color: var(--twilight-indigo) #e5e5e5;
@@ -767,7 +765,9 @@ body {
     padding: 1.75rem 2rem;
     background-color: #ffffff;
     border-radius: 12px;
-    border: 2px solid var(--muted-teal);
+    border: 2px solid var(--dark-wine);
+    aspect-ratio: 4 / 3; /* matches .org-photo-wrapper so heights align when both columns are equal width */
+    overflow-y: auto; /* keeps the same fixed-size + internal scroll pattern used elsewhere if a description runs long */
 }
 
 .org-photo-wrapper {
@@ -775,7 +775,7 @@ body {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: 12px;
-    border: 2px solid var(--muted-teal);
+    border: 2px solid var(--dark-wine);
     margin-bottom: 1.25rem;
 }
 
@@ -817,7 +817,7 @@ body {
     border-radius: 50%;
     scroll-snap-align: center;
     background-color: #fff;
-    border: 2px solid var(--muted-teal);
+    border: 2px solid rgba(123, 17, 19, 0.35);
     padding: 0;
     cursor: pointer;
     overflow: hidden;
