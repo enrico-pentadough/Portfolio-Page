@@ -1,5 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Rotating tagline
+    const tagline = document.getElementById('rotating-tagline');
+    const taglinePhrases = [
+        "— Aspiring hybrid computer engineer —",
+        "— Cheminformatics and Bioinformatics researcher —",
+        "— AI/ML enthusiast —",
+        "— Robotics & software builder —"
+    ];
+
+    if (tagline) {
+        let taglineIndex = 0;
+
+        setInterval(() => {
+            tagline.style.opacity = 0;
+
+            setTimeout(() => {
+                taglineIndex = (taglineIndex + 1) % taglinePhrases.length;
+                tagline.textContent = taglinePhrases[taglineIndex];
+                tagline.style.opacity = 1;
+            }, 400); // matches the CSS transition duration below
+        }, 3000); // how long each phrase stays visible
+    }
+
     // Homepage "Click me" button
     const funButton = document.getElementById('fun-button');
     const funMessage = document.getElementById('fun-message');

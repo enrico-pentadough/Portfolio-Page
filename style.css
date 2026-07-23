@@ -11,7 +11,16 @@
     --deep-navy: #1b2340;
 }
 
-/* ===== Alternating dark sections: full-bleed dark blue bg, white text, black accents ===== */
+#rotating-tagline {
+    transition: opacity 0.4s ease;
+    min-height: 1.5em;
+    -webkit-transition: opacity 0.4s ease;
+    -moz-transition: opacity 0.4s ease;
+    -ms-transition: opacity 0.4s ease;
+    -o-transition: opacity 0.4s ease;
+}
+
+/* Alternating dark sections: full-bleed dark blue bg, white text, black accents */
 .dark-section {
     position: relative;
     left: 50%;
@@ -21,20 +30,19 @@
     margin-right: -50vw;
     box-sizing: border-box;
     background-color: var(--deep-navy);
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-image:        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
     background-size: 28px 28px;
     color: #ffffff;
     padding: 8rem 1.5rem;
     overflow: hidden;
-    /* stabilizes rendering during scroll to reduce flicker */
-    transform: translateZ(0);
+    /*stabilizesrenderingduringscrolltoreduceflicker*/transform: translateZ(0);
     backface-visibility: hidden;
-
-    /* Edge Fade */
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);
+    /*EdgeFade*/-webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0, #000 90px, #000 calc(100% - 90px), transparent 100%);
+    -webkit-transform:;
+    -moz-transform:;
+    -ms-transform:;
+    -o-transform:;
 }
 
 /* Hobbies fade in at the top only, stay solid at the bottom */
@@ -64,7 +72,7 @@
 
 .dark-section .goal-card p,
 .dark-section .goal-card p i {
-    color: #000000; /* fixes text that was inheriting white-on-white from the section-level rule below */
+    color: #000000;
 }
 
 .dark-section p {
@@ -75,22 +83,26 @@
     background-color: #ffffff;
 }
 
-/* Fade the full-bleed dark background into the page background — now handled directly in .dark-section above */
-
 .dark-section .timeline-wrapper {
     max-width: 750px;
     margin: 2.5rem auto 0;
     border: 2px solid #ffffff;
     border-radius: 16px;
     background-color: rgba(0, 0, 0, 0.15);
-
-    /* Firefox */
-    scrollbar-color: #ffffff var(--deep-navy);
+    /*Firefox*/scrollbar-color: #ffffff var(--deep-navy);
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
 }
 
 .dark-section .timeline-wrapper::-webkit-scrollbar-track {
-    background: var(--deep-navy); /* matches the section bg so the thumb reads as a floating bar */
-    border-radius: 10px;
+    background: var(--deep-navy);
+    /*matchesthesectionbgsothethumbreadsasafloatingbar*/border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .dark-section .timeline-wrapper::-webkit-scrollbar-thumb {
@@ -321,7 +333,7 @@ body {
     border: 2px solid var(--twilight-indigo);
     background-color: white;
     position: relative;
-    min-height: 90vh;
+    min-height: 60vh; /* was 90vh */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -367,6 +379,57 @@ body {
 .hero-content .lead {
     color: var(--dark-khaki);
     text-shadow: 0 8px 20px rgba(255, 255, 255, 0.8);
+}
+
+.skill-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none; /* lets clicks pass through to your button/text */
+    z-index: 1;
+}
+
+.hero-text-content {
+    position: relative;
+    z-index: 2; /* keeps text above the floating icons */
+}
+
+.skill-icon {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid var(--muted-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    filter: blur(0.3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35); /* was 0 3px 8px rgba(0, 0, 0, 0.12) */
+    animation: float-drift var(--dur, 8s) ease-in-out var(--delay, 0s) infinite alternate;
+}
+
+.skill-icon img {
+    width: 30px; /* was 20px */
+    height: 30px; /* was 20px */
+    object-fit: contain;
+}
+
+@keyframes float-drift {
+    from { transform: translateY(0); -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); }
+    to   { transform: translateY(var(--amp, 15px)); -webkit-transform: translateY(var(--amp, 15px)); -moz-transform: translateY(var(--amp, 15px)); -ms-transform: translateY(var(--amp, 15px)); -o-transform: translateY(var(--amp, 15px)); }
+}
+
+@media (max-width: 700px) {
+    .skill-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .skill-icon img {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 /* Button in homepage css */
