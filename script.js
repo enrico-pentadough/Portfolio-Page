@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ===== Homepage "Click me" button =====
+    // Homepage "Click me" button
     const funButton = document.getElementById('fun-button');
     const funMessage = document.getElementById('fun-message');
     if (funButton) {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Contact form feedback =====
+    // Contact form feedback
     const contactForm = document.getElementById('contact-form');
     const formFeedback = document.getElementById('form-feedback');
     if (contactForm) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== Experience carousel =====
+    // Experience carousel
     const track = document.querySelector('.experience-track');
     const leftBtn = document.querySelector('.scroll-btn.left');
     const rightBtn = document.querySelector('.scroll-btn.right');
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Projects gallery modal 
+    // Projects gallery
     const projectTiles = document.querySelectorAll('.project-tile');
     const projectModal = document.getElementById('project-modal');
     const modalClose = document.getElementById('project-modal-close');
