@@ -8,89 +8,80 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-    <main class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">My Portfolio</a>
-            </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">My Portfolio</a>
+        </div>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-                &#9776;
-            </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            &#9776;
+        </button>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
+    <div class="page-scroll">
+        <main class="container">
 
-        <!-- TODO: BRING SCROLL BAR HERE TOO -->
-        <section id="projects" style="margin-top: 2rem;padding: 4rem 1.5rem; text-align: center;">
-            <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>PROJECTS</b></h2>
-            <p style="max-width: 600px; margin: 1rem auto 0; color: var(--dark-khaki);">A collection of things I've built — click any project to see the full details.</p>
+            <section id="projects" style="margin-top: 0rem; padding: 4rem 1.5rem; text-align: center;">
+                <h2 style="display: inline-block; font-family: 'Mozilla Text'; padding: 0.6rem 2rem; border: 2px solid var(--twilight-indigo); border-radius: 40px; margin-bottom: 0.5rem; letter-spacing: 1px;"><b>PROJECTS</b></h2>
+                <p style="max-width: 600px; margin: 1rem auto 0; color: var(--dark-khaki);">A collection of things I've built — click any project to see the full details.</p>
 
-            <div class="projects-grid">
-                <div class="project-tile"
-                    data-title="Project One"
-                    data-description="Insert A description of what this project does, the problem it solves, and how you built it."
-                    data-github="https://github.com/enrico-pentadough/project-one"
-                    data-docs="">
-                    <img src="images/projects/project-one.jpg" alt="Project One">
-                    <div class="project-label"><h3>Project One</h3></div>
+                <div class="projects-grid">
+                    <div class="project-tile"
+                        data-title="Cheminformatics Research"
+                        data-description="In Silico Investigation of Moringa Oleifera Flavonoids as Potential Inhibitors of NS3 and NS5 of the DENV Virus. Built a semi-automated screening pipeline using pandas for data analysis, matplotlib for modeling and visualization, and pathlib for automated file handling, narrowing 100+ flavonoid candidates down to 2 potential dengue inhibitors."
+                        data-github=""
+                        data-docs="">
+                        <img src="images/homepage/research.jpg" alt="Cheminformatics Research">
+                        <div class="project-label"><h3>Cheminformatics Research</h3></div>
+                    </div>
+
+                    <div class="project-tile"
+                        data-title="Discord Bot"
+                        data-description="Insert a description of what this bot does, the commands/features it supports, and what you built it with."
+                        data-github=""
+                        data-docs="">
+                        <img src="images/projects/discord-bot.jpg" alt="Discord Bot">
+                        <div class="project-label"><h3>Discord Bot</h3></div>
+                    </div>
+
+                    <!-- Add more projects by copying one .project-tile block above -->
                 </div>
+            </section>
 
-                <div class="project-tile"
-                    data-title="Project Two"
-                    data-description="Insert A description of what this project does, the problem it solves, and how you built it."
-                    data-github="https://github.com/enrico-pentadough/project-two"
-                    data-docs="">
-                    <img src="images/projects/project-two.jpg" alt="Project Two">
-                    <div class="project-label"><h3>Project Two</h3></div>
-                </div>
+            <!-- Full-screen project detail overlay -->
+            <div class="project-modal" id="project-modal">
+                <div class="project-modal-content">
+                    <button class="project-modal-close" id="project-modal-close" aria-label="Close project details">&times;</button>
 
-                <div class="project-tile"
-                    data-title="Project Three"
-                    data-description="Insert a description of what this project does, the problem it solves, and how you built it."
-                    data-github="https://github.com/enrico-pentadough/project-three"
-                    data-docs="">
-                    <img src="images/projects/project-three.jpg" alt="Project Three">
-                    <div class="project-label"><h3>Project Three</h3></div>
-                </div>
+                    <div class="project-modal-image">
+                        <img id="project-modal-img" src="" alt="">
+                    </div>
 
-                <!-- Add more projects by copying one .project-tile block above -->
-            </div>
-        </section>
+                    <div class="project-modal-text">
+                        <h2 id="project-modal-title"></h2>
+                        <p id="project-modal-description"></p>
 
-        <!-- Full-screen project detail overlay -->
-        <div class="project-modal" id="project-modal">
-            <div class="project-modal-content">
-                <button class="project-modal-close" id="project-modal-close" aria-label="Close project details">&times;</button>
-
-                <div class="project-modal-image">
-                    <img id="project-modal-img" src="" alt="">
-                </div>
-
-                <div class="project-modal-text">
-                    <h2 id="project-modal-title"></h2>
-                    <p id="project-modal-description"></p>
-
-                    <div class="project-modal-links">
-                        <a id="project-modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
-                        <a id="project-modal-docs" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">Documentation</a>
+                        <div class="project-modal-links">
+                            <a id="project-modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+                            <a id="project-modal-docs" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">Documentation</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </main>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2026 Enrico Wilhelm E. Pentado. All rights reserved.</p>
