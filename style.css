@@ -422,6 +422,11 @@ body {
     margin-top: 2rem;
 }
 
+/* When combined with Bootstrap's .row (Contact page), let Bootstrap's own margin/padding system handle spacing instead of stacking an extra gap on top of it */
+.goals-grid.row {
+    gap: 0;
+}
+
 .goal-card {
     background-color: var(--twilight-indigo);
     color: white;
@@ -429,6 +434,11 @@ body {
     padding: 1.5rem;
     width: 260px;
     transition: transform 0.2s ease;
+}
+
+/* Scoped only to the Contact page's new Bootstrap grid — lets cards fill their column instead of using the fixed 260px width meant for the flex-wrap layout elsewhere */
+#contact .goal-card {
+    width: 100%;
 }
 
 .goal-card:hover {
