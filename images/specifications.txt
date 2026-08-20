@@ -1,0 +1,27 @@
+html tags used:
+
+<html>
+<head>
+<body>
+<title>
+<meta>
+<link>
+<nav>
+<main>
+<section>
+<footer>
+<div>
+<hr>
+<h2>
+<h3>
+<p>
+<b>
+<i>
+<a>
+<button>
+<ul>
+<li>
+<img>
+<script>
+
+css tags

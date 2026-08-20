@@ -11,58 +11,68 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- TODO: With recent changes to css i feel as if the content is not properly centered anymore-->
-    <main class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">My Portfolio</a>
-            </div>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-                &#9776;
-            </button>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">My Portfolio</a>
+        </div>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">Contact</a></li>
-            </ul>
-        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            &#9776;
+        </button>
 
-        <section id="contact" style="padding-top: 3.2rem; font-family: 'Quicksand', sans-serif;">
-            <div class="goals-grid">
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="#" style="background-color: #fff; color: var(--twilight-indigo); padding: 0.4rem 0.8rem; border-radius: 6px;">Contact</a></li>
+        </ul>
+    </nav>
 
-                <!-- LinkedIn -->
-                <div class="goal-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; background-color: var(--twilight-indigo); color: #ffffff;">
-                    <img src="images/contact/linkedin.jpg" alt="LinkedIn profile picture"
+    <div class="page-scroll">
+        <main class="container">
+
+            <section id="contact" style="padding-top: 3.2rem; font-family: 'Quicksand', sans-serif;">
+                <div class="goals-grid">
+
+                    <!-- LinkedIn -->
+                    <div class="goal-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; background-color: var(--twilight-indigo); color: #ffffff;">
+                        <img src="images/contact/linkedin.jpg" alt="LinkedIn profile picture"
+                            style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; border: 2px solid #ffffff;">
+                        <h3 style="font-family: 'Mozilla Text', Times, serif; padding-bottom: 3.2px; color: #ffffff;"><b>LinkedIn</b></h3>
+                        <p style="color: #e6f0fa;"><i>Enrico Wilhelm Pentado, <a href="https://bit.ly/4h9Ms36" target="_blank" rel="noopener noreferrer" style="color: #e6f0fa; text-decoration: underline;">https://bit.ly/4h9Ms36</a></i></p>
+                        <h4 style="color: #ffffff;">I'd love to connect and grow our professional circles together</h4>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="goal-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; background-color: var(--twilight-indigo); color: #ffffff;">
+                        <img src="images/contact/gmail.jpg" alt="Email profile picture"
+                            style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; border: 2px solid #ffffff;">
+                        <h3 style="font-family: 'Mozilla Text', Times, serif; padding-bottom: 3.2px; color: #ffffff;"><b>Email</b></h3>
+                        <p style="color: #e6f0fa;"><i><a href="mailto:enricowilhelm25@gmail.com" style="color: #e6f0fa; text-decoration: underline;">enricowilhelm25@gmail.com</a></i></p>
+                        <h4 style="color: #ffffff;">Feel free to reach out, I always enjoy hearing from new people</h4>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="goal-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; background-color: var(--twilight-indigo); color: #ffffff;">
+                        <img src="images/contact/github.jpg" alt="GitHub profile picture"
                         style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; border: 2px solid #ffffff;">
-                    <h3 style="font-family: 'Mozilla Text', Times, serif; padding-bottom: 3.2px; color: #ffffff;"><b>LinkedIn</b></h3>
-                    <p style="color: #e6f0fa;"><i>Enrico Wilhelm Pentado, <a href="https://bit.ly/4h9Ms36" target="_blank" rel="noopener noreferrer" style="color: #e6f0fa; text-decoration: underline;">https://bit.ly/4h9Ms36</a></i></p>
-                    <h4 style="color: #ffffff;">I'd love to connect and grow our professional circles together</h4>
+                        <h3 style="font-family: 'Mozilla Text', Times, serif; padding-bottom: 3.2px; color: #ffffff;"><b>GitHub</b></h3>
+                        <p style="color: #e6f0fa;"><i><a href="https://github.com/enrico-pentadough" target="_blank" rel="noopener noreferrer" style="color: #e6f0fa; text-decoration: underline;">https://github.com/enrico-pentadough</a></i></p>
+                        <h4 style="color: #ffffff;">Take a look around, I'd love to share what I've been building</h4>
+                    </div>
+
                 </div>
 
-                <!-- Email -->
-                <div class="goal-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; background-color: var(--twilight-indigo); color: #ffffff;">
-                    <img src="images/contact/gmail.jpg" alt="Email profile picture"
-                        style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; border: 2px solid #ffffff;">
-                    <h3 style="font-family: 'Mozilla Text', Times, serif; padding-bottom: 3.2px; color: #ffffff;"><b>Email</b></h3>
-                    <p style="color: #e6f0fa;"><i><a href="mailto:enricowilhelm25@gmail.com" style="color: #e6f0fa; text-decoration: underline;">enricowilhelm25@gmail.com</a></i></p>
-                    <h4 style="color: #ffffff;">Feel free to reach out, I always enjoy hearing from new people</h4>
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <a href="mailto:enricowilhelm25@gmail.com" class="btn btn-primary" style="padding: 0.75rem 2rem; font-size: 1.05rem; border-radius: 8px;">
+                        ✉ Send Me an Email
+                    </a>
                 </div>
+            </section>
 
-                <!-- GitHub -->
-                <div class="goal-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; background-color: var(--twilight-indigo); color: #ffffff;">
-                    <img src="images/contact/github.jpg" alt="GitHub profile picture"
-                    style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; border: 2px solid #ffffff;">
-                    <h3 style="font-family: 'Mozilla Text', Times, serif; padding-bottom: 3.2px; color: #ffffff;"><b>GitHub</b></h3>
-                    <p style="color: #e6f0fa;"><i><a href="https://github.com/enrico-pentadough" target="_blank" rel="noopener noreferrer" style="color: #e6f0fa; text-decoration: underline;">https://github.com/enrico-pentadough</a></i></p>
-                    <h4 style="color: #ffffff;">Take a look around, I'd love to share what I've been building</h4>
-                </div>
-
-            </div>
-        </section>
-    </main>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2026 Enrico Wilhelm E. Pentado. All rights reserved.</p>
