@@ -239,28 +239,6 @@ body {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    .navbar {
-        flex-wrap: wrap;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    .nav-links.is-open {
-        display: flex;
-    }
-}
 
 .logo a {
     font-weight: bold;
@@ -286,6 +264,29 @@ body {
 
 .nav-links a:hover {
     color: #fff;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
 }
 
 #home {
