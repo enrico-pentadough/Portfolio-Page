@@ -260,6 +260,10 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -275,7 +279,12 @@ body {
         display: block;
     }
 
+    li {
+        margin: 0.5rem;
+    }
+
     .nav-links {
+        background-color: #3b4670;
         display: none;
         flex-direction: column;
         width: 100%;
@@ -287,6 +296,27 @@ body {
     .nav-links.is-open {
         display: flex;
     }
+
+    .nav-links-wrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s ease-out;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #444;
+        -webkit-transition: grid-template-rows 0.4s ease-out;
+        -moz-transition: grid-template-rows 0.4s ease-out;
+        -ms-transition: grid-template-rows 0.4s ease-out;
+        -o-transition: grid-template-rows 0.4s ease-out;
+}
+
+    .nav-links {
+        overflow: hidden; 
+        list-style: none;
+    }
+
 }
 
 #home {
@@ -463,6 +493,7 @@ body {
     max-width: 900px;
     margin: 2rem auto 0;
 }
+
 .experience-track {
     display: flex;
     align-items: stretch;
@@ -470,19 +501,15 @@ body {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding: 2rem calc(50% - 190px);
-    scrollbar-width: none;
+    padding: 2rem calc(50% - min(190px, 42.5vw));
+    min-width: 0;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
-.experience-track::-webkit-scrollbar {
-    display: none;
-}
-
 .experience-card {
-    flex: 0 0 380px;
-    width: 380px;
+    flex: 0 0 min(380px, 85vw);
+    width: min(380px, 85vw);
     min-height: 320px;
     scroll-snap-align: center;
     background-color: #fff;
@@ -494,6 +521,50 @@ body {
     opacity: 0.35;
     transform: scale(0.85);
     transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+    -webkit-filter: blur(5px);
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    -o-transform: scale(0.85);
+}
+
+@media (max-width: 1000px) {
+    .experience-track {
+        padding: 1.5rem calc(50% - min(190px, 41vw));
+    }
+
+    .scroll-wrapper .scroll-btn {
+        display: none;
+    }
+
+     #experience h2 {
+        padding: 0.4rem 1.2rem;
+        letter-spacing: 3px; /* was effectively wider via manual spaces in "E X P E R I E N C E" */
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .experience-card {
+        flex: 0 0 min(380px, 82vw);
+        width: min(380px, 82vw);
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .experience-card h3 {
+        font-size: 1rem;
+    }
+
+    .experience-card p {
+        font-size: 0.85rem;
+    }
+
+.experience-track::-webkit-scrollbar {
+    display: none;
 }
 
 .experience-card.is-active {
@@ -844,6 +915,14 @@ body {
     opacity: 0.9;
     transform: scale(0.85);
     transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    -o-transform: scale(0.85);
+    -webkit-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    -moz-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    -ms-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    -o-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .org-logo-item img {
