@@ -225,7 +225,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--twilight-indigo);
+    background-color: var(--deep-navy);
     padding: 1rem 1.5rem;
     z-index: 1000;
 }
@@ -260,10 +260,6 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
-    -webkit-transition: color 0.2s ease;
-    -moz-transition: color 0.2s ease;
-    -ms-transition: color 0.2s ease;
-    -o-transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -279,12 +275,7 @@ body {
         display: block;
     }
 
-    li {
-        margin: 0.5rem;
-    }
-
     .nav-links {
-        background-color: #3b4670;
         display: none;
         flex-direction: column;
         width: 100%;
@@ -296,27 +287,6 @@ body {
     .nav-links.is-open {
         display: flex;
     }
-
-    .nav-links-wrapper {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.4s ease-out;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #444;
-        -webkit-transition: grid-template-rows 0.4s ease-out;
-        -moz-transition: grid-template-rows 0.4s ease-out;
-        -ms-transition: grid-template-rows 0.4s ease-out;
-        -o-transition: grid-template-rows 0.4s ease-out;
-}
-
-    .nav-links {
-        overflow: hidden; 
-        list-style: none;
-    }
-
 }
 
 #home {
@@ -477,12 +447,13 @@ body {
 }
 
 #experience {
-    padding: 4rem .5rem;
+    padding: 4rem 1rem;
     background-color: #f4f6f5;
     text-align: center;
     overflow: hidden;
     border: 2px solid var(--twilight-indigo);
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .scroll-wrapper {
@@ -490,27 +461,51 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     max-width: 900px;
     margin: 2rem auto 0;
+    box-sizing: border-box;
 }
-
 .experience-track {
     display: flex;
     align-items: stretch;
     gap: 1.5rem;
+    width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding: 2rem calc(50% - min(190px, 42.5vw));
-    min-width: 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    padding: 2rem max(1rem, calc((100% - 380px) / 2));
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--twilight-indigo) #e5e5e5;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.experience-track::-webkit-scrollbar {
+    height: 10px;
+}
+
+.experience-track::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    border-radius: 10px;
+}
+
+.experience-track::-webkit-scrollbar-thumb {
+    background-color: var(--twilight-indigo);
+    border-radius: 10px;
+}
+
+.experience-track::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dark-wine);
 }
 
 .experience-card {
-    flex: 0 0 min(380px, 85vw);
-    width: min(380px, 85vw);
+    flex: 0 0 min(380px, calc(100vw - 4rem));
+    width: min(380px, calc(100vw - 4rem));
     min-height: 320px;
+    box-sizing: border-box;
     scroll-snap-align: center;
     background-color: #fff;
     border: 1px solid var(--muted-teal);
@@ -521,50 +516,6 @@ body {
     opacity: 0.35;
     transform: scale(0.85);
     transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
-    -webkit-filter: blur(5px);
-    -webkit-transform: scale(0.85);
-    -moz-transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    -o-transform: scale(0.85);
-}
-
-@media (max-width: 1000px) {
-    .experience-track {
-        padding: 1.5rem calc(50% - min(190px, 41vw));
-    }
-
-    .scroll-wrapper .scroll-btn {
-        display: none;
-    }
-
-     #experience h2 {
-        padding: 0.4rem 1.2rem;
-        letter-spacing: 3px; /* was effectively wider via manual spaces in "E X P E R I E N C E" */
-        font-size: 1rem;
-        max-width: 90%;
-    }
-
-    .experience-card {
-        flex: 0 0 min(380px, 82vw);
-        width: min(380px, 82vw);
-        min-height: auto;
-        padding: 1rem;
-    }
-
-    .experience-card h3 {
-        font-size: 1rem;
-    }
-
-    .experience-card p {
-        font-size: 0.85rem;
-    }
-
-.experience-track::-webkit-scrollbar {
-    display: none;
 }
 
 .experience-card.is-active {
@@ -829,7 +780,29 @@ body {
     align-items: flex-start;
 }
 
+
+@media (max-width: 600px) {
+    #experience {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .scroll-wrapper {
+        width: 100%;
+    }
+
+    .experience-track {
+        gap: 1rem;
+        padding: 1.5rem max(0.75rem, calc((100% - (100vw - 2rem)) / 2));
+        -webkit-mask-image: none;
+        mask-image: none;
+        scrollbar-width: thin;
+    }
+
+}
+
 @media (max-width: 700px) {
+    
     .org-layout {
         flex-direction: column;
         align-items: stretch;
@@ -840,6 +813,14 @@ body {
         width: 100%;
         min-width: 0;
         box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-card {
+        flex: 0 0 calc(100vw - 5rem);
+        width: calc(100vw - 5rem);
+        min-height: 300px;
     }
 }
 
@@ -915,14 +896,6 @@ body {
     opacity: 0.9;
     transform: scale(0.85);
     transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    -webkit-transform: scale(0.85);
-    -moz-transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    -o-transform: scale(0.85);
-    -webkit-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    -moz-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    -ms-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    -o-transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .org-logo-item img {
@@ -1074,6 +1047,16 @@ body {
     padding: 2rem;
 }
 
+#project-modal::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
 .project-modal.is-open {
     display: flex;
 }
@@ -1197,4 +1180,12 @@ b{
 }
 i{
     font-style: italic;
+}
+/* Experience section uses the native horizontal scrollbar instead of navigation buttons. */
+#experience .scroll-btn {
+    display: none;
+}
+
+#experience .scroll-wrapper {
+    display: block;
 }

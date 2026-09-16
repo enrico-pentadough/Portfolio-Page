@@ -44,53 +44,77 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Experience carousel
     const track = document.querySelector('.experience-track');
-    const leftBtn = document.querySelector('.scroll-btn.left');
-    const rightBtn = document.querySelector('.scroll-btn.right');
     const cards = Array.from(document.querySelectorAll('.experience-card'));
 
-    if (track && leftBtn && rightBtn && cards.length) {
-        const middleIndex = Math.floor(cards.length / 2); // e.g. 3 cards -> index 1
+
+    if (track && cards.length) {
+        const middleIndex = Math.floor(cards.length / 2);
         let currentIndex = middleIndex;
 
-        function goToCard(index) {
-            if (index < 0 || index >= cards.length) return;
-            currentIndex = index;
-            cards[currentIndex].scrollIntoView({
-                behavior: 'smooth',
-                inline: 'center',
-                block: 'nearest',
+        function setActiveCard(card) {
+            cards.forEach((item) => {
+                item.classList.remove('is-active');
             });
+
+            card.classList.add('is-active');
+            currentIndex = cards.indexOf(card);
         }
 
-        leftBtn.addEventListener('click', () => goToCard(currentIndex - 1));
-        rightBtn.addEventListener('click', () => goToCard(currentIndex + 1));
+        function updateActiveCard() {
+            const trackRect = track.getBoundingClientRect();
+            const trackCenter = trackRect.left + trackRect.width / 2;
 
-        // Focus/blur tracking — also keeps currentIndex in sync if user swipes/drags manually
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
-                        cards.forEach((card) => card.classList.remove('is-active'));
-                        entry.target.classList.add('is-active');
-                        currentIndex = cards.indexOf(entry.target);
-                    }
-                });
-            },
-            {
-                root: track,
-                threshold: [0.6],
-            }
-        );
+            let closestCard = cards[0];
+            let closestDistance = Infinity;
 
-        cards.forEach((card) => observer.observe(card));
-        cards[middleIndex].classList.add('is-active');
+            cards.forEach((card) => {
+                const cardRect = card.getBoundingClientRect();
+                const cardCenter = cardRect.left + cardRect.width / 2;
+                const distance = Math.abs(cardCenter - trackCenter);
 
-        // Scroll the middle card into center position on page load, without affecting page scroll
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestCard = card;
+                }
+            });
+
+            setActiveCard(closestCard);
+        }
+
+        setActiveCard(cards[middleIndex]);
+
+        let scrollTimeout;
+
+        track.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+
+            scrollTimeout = setTimeout(() => {
+                updateActiveCard();
+            }, 50);
+        });
+
         window.addEventListener('load', () => {
             const card = cards[middleIndex];
+
             const targetScrollLeft =
-                card.offsetLeft - (track.clientWidth / 2) + (card.clientWidth / 2);
-            track.scrollLeft = targetScrollLeft;
+                card.offsetLeft -
+                (track.clientWidth / 2) +
+                (card.clientWidth / 2);
+
+            track.scrollTo({
+                left: targetScrollLeft,
+                behavior: 'auto'
+            });
+
+            setActiveCard(card);
+
+            setTimeout(() => {
+                updateActiveCard();
+            }, 100);
+        });
+
+        window.addEventListener('resize', () => {
+            updateActiveCard();
         });
     }
 
